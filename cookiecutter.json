@@ -1,0 +1,9 @@
+{
+"project_name": "my-project",
+"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+"cpp_standard": ["23", "20"],
+"compiler": ["clang", "gcc", "msvc"],
+"build_system": ["ninja", "make"],
+"package_manager": ["conan", "none"],
+"testing": ["catch2", "googletest", "none"]
+}
