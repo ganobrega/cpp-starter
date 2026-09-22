@@ -1,0 +1,51 @@
+project_name:
+type: str
+help: Project name
+default: my-project
+
+project_slug:
+type: str
+help: Project directory name
+default: "{{ project_name | lower | replace(' ', '-') }}"
+
+cpp_standard:
+type: str
+help: C++ standard
+choices:
+- "23"
+- "20"
+default: "23"
+
+compiler:
+type: str
+help: Compiler
+choices:
+- clang
+- gcc
+- msvc
+default: clang
+
+build_system:
+type: str
+help: Build system
+choices:
+- ninja
+- make
+default: ninja
+
+package_manager:
+type: str
+help: Package manager
+choices:
+- conan
+- none
+default: conan
+
+testing:
+type: str
+help: Testing framework
+choices:
+- catch2
+- googletest
+- none
+default: catch2
