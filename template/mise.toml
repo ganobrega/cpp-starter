@@ -1,1 +1,19 @@
+[tools]
+cmake = "latest"
+ninja = "latest"
+conan = "latest"
 
+[tasks.configure]
+run = "cmake -S . -B build -G Ninja"
+
+[tasks.build]
+depends = ["configure"]
+run = "cmake --build build"
+
+[tasks.start]
+depends = ["build"]
+run = "./build/{{ project_slug }}"
+
+[tasks.test]
+depends = ["build"]
+run = "ctest --test-dir build --output-on-failure"
